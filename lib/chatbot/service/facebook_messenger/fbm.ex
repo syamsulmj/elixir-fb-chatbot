@@ -16,7 +16,7 @@ defmodule Chatbot.Service.FacebookMessenger.FBM do
     end
   end
 
-  defp build_msg_structure(params) do
+  def build_msg_structure(params) do
     case params.type do
       "message" ->
         %{
