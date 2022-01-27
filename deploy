@@ -1,0 +1,14 @@
+#!/bin/bash
+
+mix deps.get
+cd assets
+npm install
+npm run deploy
+cd ..
+mix phx.digest
+
+export SECRET_KEY_BASE="$(mix phx.gen.secret)"
+export DATABASE_URL="postgresql://postgres:postgres@localhost:5432/chatbot_dev"
+MIX_ENV=prod mix release
+
+export APP_NAME=fb-chatbot
