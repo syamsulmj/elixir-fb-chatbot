@@ -17,6 +17,8 @@ defmodule ChatbotWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/private_confidential", PageController, :private_confidential
+    get "/term_condition", PageController, :term_condition
   end
 
   scope "/api", ChatbotWeb.Api do
